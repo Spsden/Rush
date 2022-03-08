@@ -12,32 +12,43 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.rush.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
 
-    private lateinit var  navController: NavController
-    private lateinit var binding : ActivityMainBinding
+   // private lateinit var  navController: NavController
+    //private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-      //  navController = findNavController(R.id.fragmentHostView)
+        //binding = ActivityMainBinding.inflate(layoutInflater)
+        //setContentView(binding.root)
+
+        setContentView(R.layout.activity_main)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentHostView)
+        //navController = findNavController(R.id.fragmentHostView)
+        val navController = navHostFragment?.findNavController()
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        if (navController != null) {
+            bottomNavigationView.setupWithNavController(navController)
+        }
 
 
         val homeFragment = HomeFragment()
         val cartFragment = CartFragment()
 
-        binding.bottomNavigation.setOnItemSelectedListener {
-            when(it.itemId){
-                R.id.home_page -> setCurrentFragment(homeFragment)
-                R.id.cart_page -> setCurrentFragment(cartFragment)
-            }
-            true
-        }
+//        binding.bottomNavigation.setOnItemSelectedListener {
+//            when(it.itemId){
+//                R.id.home_page -> setCurrentFragment(homeFragment)
+//                R.id.cart_page -> setCurrentFragment(cartFragment)
+//            }
+//            true
+//        }
 
 
     }

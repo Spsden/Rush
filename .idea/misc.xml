@@ -16,8 +16,12 @@
         <entry key="..\:/appdev/rush/app/src/main/res/drawable/storage.xml" value="0.1535" />
         <entry key="..\:/appdev/rush/app/src/main/res/layout/activity_main.xml" value="0.2703804347826087" />
         <entry key="..\:/appdev/rush/app/src/main/res/layout/browsersgrid.xml" value="0.23645833333333333" />
+        <entry key="..\:/appdev/rush/app/src/main/res/layout/fragment_app_list.xml" value="0.28489583333333335" />
+        <entry key="..\:/appdev/rush/app/src/main/res/layout/fragment_app_list_list.xml" value="0.28489583333333335" />
+        <entry key="..\:/appdev/rush/app/src/main/res/layout/fragment_browsers.xml" value="0.28489583333333335" />
         <entry key="..\:/appdev/rush/app/src/main/res/layout/fragment_cart.xml" value="0.28541666666666665" />
         <entry key="..\:/appdev/rush/app/src/main/res/layout/fragment_home.xml" value="0.2994791666666667" />
+        <entry key="..\:/appdev/rush/app/src/main/res/menu/menu.xml" value="0.28489583333333335" />
       </map>
     </option>
   </component>
