@@ -1,20 +1,14 @@
 package com.example.rush
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.AttributeSet
 import android.view.View
-import android.widget.MediaController
-import android.widget.PopupMenu
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.rush.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -42,13 +36,6 @@ class MainActivity : AppCompatActivity() {
         val homeFragment = HomeFragment()
         val cartFragment = CartFragment()
 
-//        binding.bottomNavigation.setOnItemSelectedListener {
-//            when(it.itemId){
-//                R.id.home_page -> setCurrentFragment(homeFragment)
-//                R.id.cart_page -> setCurrentFragment(cartFragment)
-//            }
-//            true
-//        }
 
 
     }

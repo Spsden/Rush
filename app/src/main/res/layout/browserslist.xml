@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -24,22 +23,24 @@
         android:gravity="center">
 
         <ImageView
-            android:id="@+id/app_icon"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/ic_firefox_logo"
-             />
+            android:id="@+id/app_category_thumb"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:contentDescription="Browser"
+            android:src="@drawable/ic_globe" />
 
         <TextView
-            android:id="@+id/app_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/app_category_name"
             android:layout_marginLeft="10dp"
-
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textColor="@color/white"
+            android:text="Browsers"
             android:layout_weight="1"
-            android:text="Firefox"
-            android:textAppearance="?attr/textAppearanceListItem" />
+            android:textSize="25sp"
+             />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

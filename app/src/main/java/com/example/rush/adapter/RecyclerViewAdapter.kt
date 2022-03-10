@@ -11,25 +11,30 @@ import com.example.rush.dataclasses.AppCategory
 
 class RecyclerViewAdapter(
     private val appCategoryList: ArrayList<AppCategory>,
-    private val listener: OnItemClickListener
+    private val listener: OnItemClickListener,
+  //  private val isList : Boolean
+
 
     ) :
     RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
-  //  private lateinit var cardListener : ClickListener
-
-
-
-
-//    fun setOnItemClickListener(listener: clickListener){
-//        cardListener = listener
-//    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.browsersgrid, parent, false)
-        return ViewHolder(itemView)
+      //  if (isList){
+            val itemView =
+                LayoutInflater.from(parent.context).inflate(R.layout.browsersgrid, parent, false)
+            return ViewHolder(itemView)
+//
+//        } else {
+//
+//            val itemView =
+//                LayoutInflater.from(parent.context).inflate(R.layout.browserslist, parent, false)
+//            return ViewHolder(itemView)
+//
+//        }
+
+
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
