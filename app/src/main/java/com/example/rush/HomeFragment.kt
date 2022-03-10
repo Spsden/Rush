@@ -56,11 +56,12 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
         appCategoryImages = arrayOf(
             R.drawable.ic_globe,
             R.drawable.social,
+            R.drawable.ic_message_square,
             R.drawable.docs,
             R.drawable.filemanager,
 
 
-            R.drawable.ic_message_square,
+
             R.drawable.storage,
             R.drawable.more,
         )
@@ -68,12 +69,13 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
         appCategoryNames = arrayOf(
             "Browsers",
             "Social Media",
+            "Messaging",
             "Documents",
             "File Managers",
 
 
 
-            "Messaging",
+
             "Cloud",
             "More"
 

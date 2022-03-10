@@ -24,7 +24,8 @@ class AllAppListFragment : Fragment() {
     private lateinit var socialMediaList: ArrayList<AppCategory>
     private lateinit var messengersList: ArrayList<AppCategory>
     private lateinit var fileManagersList: ArrayList<AppCategory>
-    val args : AllAppListFragmentArgs by navArgs()
+    private val args: AllAppListFragmentArgs by navArgs()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,11 +41,27 @@ class AllAppListFragment : Fragment() {
     ): View? {
 
         binding = FragmentAllAppListBinding.inflate(layoutInflater)
+        val dataFromHome: Int = args.appType
+
+
+        val appCategoryNames = arrayOf(
+            "Browsers",
+            "Social Media",
+            "Messaging",
+            "Documents",
+            "File Managers",
+            "Cloud",
+            "More"
+
+
+        )
+        binding.data = appCategoryNames[dataFromHome].toString()
+
         return binding.root
 
 
         // Inflate the layout for this fragment
-       // return inflater.inflate(R.layout.fragment_all_app_list, container, false)
+        // return inflater.inflate(R.layout.fragment_all_app_list, container, false)
     }
 
 
@@ -54,7 +71,12 @@ class AllAppListFragment : Fragment() {
         val repository = dao?.let { AppsRepository(it) }
 
 
-        appsViewModel = ViewModelProvider(this,AppsViewModelFactory(repository!!)).get(AppsViewModel::class.java)
+        appsViewModel = ViewModelProvider(
+            this,
+            AppsViewModelFactory(repository!!)
+        ).get(AppsViewModel::class.java)
+
+
 
 
 
@@ -72,7 +94,7 @@ class AllAppListFragment : Fragment() {
             R.drawable.opera,
             R.drawable.brave,
 
-        )
+            )
 
         val browserNames = arrayOf(
             "Firefox",
@@ -116,37 +138,37 @@ class AllAppListFragment : Fragment() {
             "Telegram",
             "Signal",
 
-        )
+            )
 
-        for (i in browserIcons.indices){
+        for (i in browserIcons.indices) {
             val appBrowsers = AppCategory(browserIcons[i], browserNames[i])
             browserList.add(appBrowsers)
         }
-        for (i in socialMediaIcons.indices){
+        for (i in socialMediaIcons.indices) {
             val appBrowsers = AppCategory(socialMediaIcons[i], socialMediaNames[i])
             socialMediaList.add(appBrowsers)
         }
-        for (i in messagingIcons.indices){
+        for (i in messagingIcons.indices) {
             val appBrowsers = AppCategory(messagingIcons[i], messagingNames[i])
             messengersList.add(appBrowsers)
         }
 
 
-
-        val allAppsMap = mapOf<Int,ArrayList<AppCategory>>(
+        val allAppsMap = mapOf<Int, ArrayList<AppCategory>>(
             0 to browserList,
             1 to socialMediaList,
+            2 to messengersList
 
         )
 
-        var datafromHome: Int = args.appType
+        val dataFromHome: Int = args.appType
 
 
 
 
         val recyclerView = binding.listOfApps
 
-        recyclerView.adapter = allAppsMap[datafromHome]?.let { ApplListRecyclerView(it) }
+        recyclerView.adapter = allAppsMap[dataFromHome]?.let { ApplListRecyclerView(it) }
         recyclerView.layoutManager = LinearLayoutManager(context)
 
 

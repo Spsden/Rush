@@ -39,7 +39,7 @@
                     app:contentScrim="?attr/colorPrimary"
                     app:expandedTitleMarginStart="20dp"
                     app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-                    app:title="Your Rush">
+                    app:title="@{data}">
 
                     <!--            <ImageView-->
                     <!--                android:id="@+id/imageViewCollapsing"-->
@@ -86,16 +86,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:text="@{data}"
-                        android:textColor="@color/white"
-                        android:textSize="40sp"
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:text="@{data}"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="40sp"-->
 
 
-                        android:layout_height="match_parent">
+<!--                        android:layout_height="match_parent">-->
 
-                    </TextView>
+<!--                    </TextView>-->
 
 
                             <androidx.recyclerview.widget.RecyclerView
