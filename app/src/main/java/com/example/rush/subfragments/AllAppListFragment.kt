@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rush.R
 import com.example.rush.adapter.ApplListRecyclerView
@@ -23,6 +24,7 @@ class AllAppListFragment : Fragment() {
     private lateinit var socialMediaList: ArrayList<AppCategory>
     private lateinit var messengersList: ArrayList<AppCategory>
     private lateinit var fileManagersList: ArrayList<AppCategory>
+    val args : AllAppListFragmentArgs by navArgs()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -131,20 +133,20 @@ class AllAppListFragment : Fragment() {
 
 
 
-//        val allAppsMap = LinkedHashMap<String,ArrayList<Apps>>()
-//
-//        allAppsMap["Browsers"] = [
-//
-//        ]
+        val allAppsMap = mapOf<Int,ArrayList<AppCategory>>(
+            0 to browserList,
+            1 to socialMediaList,
+
+        )
+
+        var datafromHome: Int = args.appType
 
 
-//        Map<String,ArrayList<Apps>> = {
-//
-//        }
+
 
         val recyclerView = binding.listOfApps
 
-        recyclerView.adapter = ApplListRecyclerView(browserList)
+        recyclerView.adapter = allAppsMap[datafromHome]?.let { ApplListRecyclerView(it) }
         recyclerView.layoutManager = LinearLayoutManager(context)
 
 
