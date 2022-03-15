@@ -57,12 +57,11 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
             R.drawable.ic_globe,
             R.drawable.social,
             R.drawable.ic_message_square,
-            R.drawable.docs,
+           // R.drawable.docs,
             R.drawable.filemanager,
 
-
-
             R.drawable.storage,
+            R.drawable.ic_imaging,
             R.drawable.more,
         )
 
@@ -70,13 +69,10 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
             "Browsers",
             "Social Media",
             "Messaging",
-            "Documents",
+            //"Documents",
             "File Managers",
-
-
-
-
             "Cloud",
+            "Imaging",
             "More"
 
 

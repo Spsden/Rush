@@ -24,6 +24,11 @@ class AllAppListFragment : Fragment() {
     private lateinit var socialMediaList: ArrayList<AppCategory>
     private lateinit var messengersList: ArrayList<AppCategory>
     private lateinit var fileManagersList: ArrayList<AppCategory>
+    private lateinit var cloudAppsList: ArrayList<AppCategory>
+    private lateinit var imagingAppsList: ArrayList<AppCategory>
+    private lateinit var mediaAndStreamAppsList: ArrayList<AppCategory>
+    private lateinit var paymentAppsList: ArrayList<AppCategory>
+    private lateinit var shoppingAppsList: ArrayList<AppCategory>
     private val args: AllAppListFragmentArgs by navArgs()
 
 
@@ -48,7 +53,7 @@ class AllAppListFragment : Fragment() {
             "Browsers",
             "Social Media",
             "Messaging",
-            "Documents",
+//            "Documents",
             "File Managers",
             "Cloud",
             "More"
@@ -85,6 +90,11 @@ class AllAppListFragment : Fragment() {
         socialMediaList = arrayListOf()
         messengersList = arrayListOf()
         fileManagersList = arrayListOf()
+        cloudAppsList = arrayListOf()
+        imagingAppsList = arrayListOf()
+        mediaAndStreamAppsList = arrayListOf()
+        paymentAppsList = arrayListOf()
+        shoppingAppsList = arrayListOf()
 
 
         val browserIcons = arrayOf(
@@ -140,6 +150,37 @@ class AllAppListFragment : Fragment() {
 
             )
 
+
+
+        val fileManagersIcons = arrayOf(
+            R.drawable.solidexplorer,
+            R.drawable.cx,
+
+
+
+            )
+
+        val fileManagersNames = arrayOf(
+            "Solid Explorer",
+            "Cx File Explorer",
+
+
+            )
+
+        val cloudIcons = arrayOf(
+            R.drawable.drive,
+            R.drawable.dropbox,
+
+
+            )
+
+        val cloudNames = arrayOf(
+            "Drive",
+            "DropBox",
+
+
+        )
+
         for (i in browserIcons.indices) {
             val appBrowsers = AppCategory(browserIcons[i], browserNames[i])
             browserList.add(appBrowsers)
@@ -152,12 +193,23 @@ class AllAppListFragment : Fragment() {
             val appBrowsers = AppCategory(messagingIcons[i], messagingNames[i])
             messengersList.add(appBrowsers)
         }
+        for (i in fileManagersIcons.indices) {
+            val appBrowsers = AppCategory(fileManagersIcons[i], fileManagersNames[i])
+            fileManagersList.add(appBrowsers)
+        }
+        for (i in cloudIcons.indices) {
+            val appBrowsers = AppCategory(cloudIcons[i], cloudNames[i])
+            cloudAppsList.add(appBrowsers)
+        }
 
 
         val allAppsMap = mapOf<Int, ArrayList<AppCategory>>(
             0 to browserList,
             1 to socialMediaList,
-            2 to messengersList
+            2 to messengersList,
+            3 to fileManagersList,
+            4 to cloudAppsList
+
 
         )
 
