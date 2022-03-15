@@ -62,6 +62,8 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
 
             R.drawable.storage,
             R.drawable.ic_imaging,
+            R.drawable.ic_tv,
+            R.drawable.shopping,
             R.drawable.more,
         )
 
@@ -73,6 +75,8 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
             "File Managers",
             "Cloud",
             "Imaging",
+            "Media & Streaming",
+            "Shopping",
             "More"
 
 

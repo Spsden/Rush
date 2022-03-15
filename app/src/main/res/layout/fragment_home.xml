@@ -98,6 +98,7 @@
                 android:layout_height="match_parent"
                 tools:listitem="@layout/browsersgrid"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="60dp"
 
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

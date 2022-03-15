@@ -56,6 +56,10 @@ class AllAppListFragment : Fragment() {
 //            "Documents",
             "File Managers",
             "Cloud",
+            "Imaging",
+            "Media & Streaming",
+            "Shopping",
+
             "More"
 
 
@@ -180,6 +184,50 @@ class AllAppListFragment : Fragment() {
 
 
         )
+        val ImagingIcons = arrayOf(
+            R.drawable.picsart,
+            R.drawable.ic_icons8_snapseed,
+            R.drawable.gallery
+
+
+            )
+
+        val ImagingNames = arrayOf(
+            "Picsart",
+            "Snapseed",
+            "Simple Gallery"
+
+
+            )
+
+        val MediaIcons = arrayOf(
+            R.drawable.netflix,
+            R.drawable.amazon,
+            R.drawable.vlc,
+
+
+
+        )
+
+        val MediaNames = arrayOf(
+            "Netflix",
+            "Amazon Prime Video",
+            "Vlc Media Player"
+
+
+        )
+        val shoppingIcons = arrayOf(
+            R.drawable.amazon,
+            R.drawable.ic_flipkart,
+
+
+            )
+
+        val shoppingNames = arrayOf(
+            "Amazon",
+            "Flipkart",
+
+        )
 
         for (i in browserIcons.indices) {
             val appBrowsers = AppCategory(browserIcons[i], browserNames[i])
@@ -201,6 +249,18 @@ class AllAppListFragment : Fragment() {
             val appBrowsers = AppCategory(cloudIcons[i], cloudNames[i])
             cloudAppsList.add(appBrowsers)
         }
+        for (i in ImagingIcons.indices) {
+            val appBrowsers = AppCategory(ImagingIcons[i], ImagingNames[i])
+            imagingAppsList.add(appBrowsers)
+        }
+        for (i in  MediaIcons.indices) {
+            val appBrowsers = AppCategory(MediaIcons[i], MediaNames[i])
+            mediaAndStreamAppsList.add(appBrowsers)
+        }
+        for (i in  shoppingIcons.indices) {
+            val appBrowsers = AppCategory(shoppingIcons[i], shoppingNames[i])
+            shoppingAppsList.add(appBrowsers)
+        }
 
 
         val allAppsMap = mapOf<Int, ArrayList<AppCategory>>(
@@ -208,7 +268,10 @@ class AllAppListFragment : Fragment() {
             1 to socialMediaList,
             2 to messengersList,
             3 to fileManagersList,
-            4 to cloudAppsList
+            4 to cloudAppsList,
+            5 to imagingAppsList,
+            6 to mediaAndStreamAppsList,
+            7 to shoppingAppsList
 
 
         )
