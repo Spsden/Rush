@@ -10,14 +10,18 @@ data class Apps(
 
 
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
-    var appcategory: String,
+    val id: Int = 0,
+    //var appcategory: String,
     var appIcon: Int,
     var appName: String,
-    var appLink: String,
+    //var appLink: String,
 
 
-    )
+)
+
+//{
+//    constructor() : this(id = Int.MIN_VALUE,appIcon = 0, appName= "lol")
+//}
 
 
 

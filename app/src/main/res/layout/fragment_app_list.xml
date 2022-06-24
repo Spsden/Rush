@@ -29,13 +29,13 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:src="@drawable/ic_firefox_logo"
-             />
+            android:contentDescription="APP Icon" />
 
         <TextView
             android:id="@+id/app_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
 
             android:textColor="@color/white"
             android:layout_weight="1"
@@ -43,10 +43,11 @@
             android:textAppearance="?attr/textAppearanceListItem" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkbox"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"/>
 
-        </com.google.android.material.checkbox.MaterialCheckBox>
+
 
 
 

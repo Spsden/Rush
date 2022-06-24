@@ -9,26 +9,30 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rush.R
-import com.example.rush.adapter.ApplListRecyclerView
+import com.example.rush.adapter.AppListRecyclerView
+
 import com.example.rush.databinding.FragmentAllAppListBinding
-import com.example.rush.databinding.FragmentHomeBinding
-import com.example.rush.dataclasses.AppCategory
+
 import com.example.rush.mvvm.*
 
 
 class AllAppListFragment : Fragment() {
 
+
+    //Someday I will make a proper database, for now
+    //hardcoding the heck out of it.. lol.....
+
     lateinit var binding: FragmentAllAppListBinding
     lateinit var appsViewModel: AppsViewModel
-    private lateinit var browserList: ArrayList<AppCategory>
-    private lateinit var socialMediaList: ArrayList<AppCategory>
-    private lateinit var messengersList: ArrayList<AppCategory>
-    private lateinit var fileManagersList: ArrayList<AppCategory>
-    private lateinit var cloudAppsList: ArrayList<AppCategory>
-    private lateinit var imagingAppsList: ArrayList<AppCategory>
-    private lateinit var mediaAndStreamAppsList: ArrayList<AppCategory>
-    private lateinit var paymentAppsList: ArrayList<AppCategory>
-    private lateinit var shoppingAppsList: ArrayList<AppCategory>
+    private lateinit var browserList: ArrayList<Apps>
+    private lateinit var socialMediaList: ArrayList<Apps>
+    private lateinit var messengersList: ArrayList<Apps>
+    private lateinit var fileManagersList: ArrayList<Apps>
+    private lateinit var cloudAppsList: ArrayList<Apps>
+    private lateinit var imagingAppsList: ArrayList<Apps>
+    private lateinit var mediaAndStreamAppsList: ArrayList<Apps>
+    private lateinit var paymentAppsList: ArrayList<Apps>
+    private lateinit var shoppingAppsList: ArrayList<Apps>
     private val args: AllAppListFragmentArgs by navArgs()
 
 
@@ -49,7 +53,7 @@ class AllAppListFragment : Fragment() {
         val dataFromHome: Int = args.appType
 
 
-        val appCategoryNames = arrayOf(
+        val AppsNames = arrayOf(
             "Browsers",
             "Social Media",
             "Messaging",
@@ -64,7 +68,7 @@ class AllAppListFragment : Fragment() {
 
 
         )
-        binding.data = appCategoryNames[dataFromHome].toString()
+        binding.data = AppsNames[dataFromHome].toString()
 
         return binding.root
 
@@ -230,40 +234,40 @@ class AllAppListFragment : Fragment() {
         )
 
         for (i in browserIcons.indices) {
-            val appBrowsers = AppCategory(browserIcons[i], browserNames[i])
+            val appBrowsers = Apps(appIcon =  browserIcons[i], appName = browserNames[i])
             browserList.add(appBrowsers)
         }
         for (i in socialMediaIcons.indices) {
-            val appBrowsers = AppCategory(socialMediaIcons[i], socialMediaNames[i])
+            val appBrowsers = Apps(appIcon = socialMediaIcons[i], appName =  socialMediaNames[i])
             socialMediaList.add(appBrowsers)
         }
         for (i in messagingIcons.indices) {
-            val appBrowsers = AppCategory(messagingIcons[i], messagingNames[i])
+            val appBrowsers = Apps(appIcon = messagingIcons[i], appName = messagingNames[i])
             messengersList.add(appBrowsers)
         }
         for (i in fileManagersIcons.indices) {
-            val appBrowsers = AppCategory(fileManagersIcons[i], fileManagersNames[i])
+            val appBrowsers = Apps(appIcon = fileManagersIcons[i], appName = fileManagersNames[i])
             fileManagersList.add(appBrowsers)
         }
         for (i in cloudIcons.indices) {
-            val appBrowsers = AppCategory(cloudIcons[i], cloudNames[i])
+            val appBrowsers = Apps(appIcon = cloudIcons[i], appName = cloudNames[i])
             cloudAppsList.add(appBrowsers)
         }
         for (i in ImagingIcons.indices) {
-            val appBrowsers = AppCategory(ImagingIcons[i], ImagingNames[i])
+            val appBrowsers = Apps(appIcon =  ImagingIcons[i], appName =  ImagingNames[i])
             imagingAppsList.add(appBrowsers)
         }
         for (i in  MediaIcons.indices) {
-            val appBrowsers = AppCategory(MediaIcons[i], MediaNames[i])
+            val appBrowsers = Apps(appIcon =  MediaIcons[i], appName =  MediaNames[i])
             mediaAndStreamAppsList.add(appBrowsers)
         }
         for (i in  shoppingIcons.indices) {
-            val appBrowsers = AppCategory(shoppingIcons[i], shoppingNames[i])
+            val appBrowsers = Apps(appIcon = shoppingIcons[i], appName =  shoppingNames[i])
             shoppingAppsList.add(appBrowsers)
         }
 
 
-        val allAppsMap = mapOf<Int, ArrayList<AppCategory>>(
+        val allAppsMap = mapOf<Int, ArrayList<Apps>>(
             0 to browserList,
             1 to socialMediaList,
             2 to messengersList,
@@ -283,7 +287,7 @@ class AllAppListFragment : Fragment() {
 
         val recyclerView = binding.listOfApps
 
-        recyclerView.adapter = allAppsMap[dataFromHome]?.let { ApplListRecyclerView(it) }
+        recyclerView.adapter = allAppsMap[dataFromHome]?.let { AppListRecyclerView(it) }
         recyclerView.layoutManager = LinearLayoutManager(context)
 
 

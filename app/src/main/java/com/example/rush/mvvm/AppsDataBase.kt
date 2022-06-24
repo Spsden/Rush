@@ -20,8 +20,8 @@ abstract class AppsDataBase : RoomDatabase() {
                     INSTANCE = Room.databaseBuilder(
                         context.applicationContext,
                         AppsDataBase::class.java,
-                        "apps_database"
-                    ).createFromAsset("allApps.db")
+                        "Apps"
+                    )
                         .build()
                 }
             }

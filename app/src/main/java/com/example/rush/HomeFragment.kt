@@ -18,16 +18,13 @@ import com.example.rush.dataclasses.AppCategory
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
-class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
+class HomeFragment : Fragment(), RecyclerViewAdapter.OnItemClickListener {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var homeRecyclerView: RecyclerView
     private lateinit var appCategoryArray: ArrayList<AppCategory>
     private lateinit var appCategoryImages: Array<Int>
     private lateinit var appCategoryNames: Array<String>
-
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,15 +52,14 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
         var settingButton = binding.switchLayout
         settingButton.setOnClickListener {
 
-            val popUp = PopupMenu(context,settingButton)
+            val popUp = PopupMenu(context, settingButton)
 
-            popUp.menuInflater.inflate(R.menu.menu,popUp.menu)
+            popUp.menuInflater.inflate(R.menu.menu, popUp.menu)
 
 //            popUp.setOnMenuItemClickListener { myItem ->
 //                val item = myItem.itemId
 //            }
 
-            
 
         }
 
@@ -74,7 +70,7 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
             R.drawable.ic_globe,
             R.drawable.social,
             R.drawable.ic_message_square,
-           // R.drawable.docs,
+            // R.drawable.docs,
             R.drawable.filemanager,
 
             R.drawable.storage,
@@ -97,7 +93,7 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
             "More"
 
 
-            )
+        )
         appCategoryArray = arrayListOf()
 
 
@@ -118,24 +114,18 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
     //val switchButton = binding.switchLayout.setOnClickListener {  }
 
 
-
-
-
     override fun onCardClick(position: Int) {
-        Toast.makeText(context, "Hey",Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, "Hey", Toast.LENGTH_SHORT).show()
 
         val action =
 
-            view?.findNavController()?.navigate(HomeFragmentDirections.actionHomeFragmentToAllAppListFragment(position))
+            view?.findNavController()
+                ?.navigate(HomeFragmentDirections.actionHomeFragmentToAllAppListFragment(position))
 
         //view?.let { Navigation.findNavController(it).navigate(R.id.action_homeFragment_to_allAppListFragment) }
 
 
     }
-
-
-
-
 
 
     companion object {
