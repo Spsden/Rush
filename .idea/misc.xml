@@ -7,6 +7,7 @@
         <entry key="..\:/appdev/rush/app/src/main/res/drawable/docs.xml" value="0.1535" />
         <entry key="..\:/appdev/rush/app/src/main/res/drawable/filemanager.xml" value="0.1535" />
         <entry key="..\:/appdev/rush/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1115" />
+        <entry key="..\:/appdev/rush/app/src/main/res/drawable/ic_flipkart.xml" value="0.247" />
         <entry key="..\:/appdev/rush/app/src/main/res/drawable/ic_globe.xml" value="0.2585" />
         <entry key="..\:/appdev/rush/app/src/main/res/drawable/ic_imaging.xml" value="0.2945" />
         <entry key="..\:/appdev/rush/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1535" />
@@ -26,7 +27,8 @@
         <entry key="..\:/appdev/rush/app/src/main/res/layout/fragment_app_list_list.xml" value="0.19555555555555557" />
         <entry key="..\:/appdev/rush/app/src/main/res/layout/fragment_browsers.xml" value="0.28489583333333335" />
         <entry key="..\:/appdev/rush/app/src/main/res/layout/fragment_cart.xml" value="0.28541666666666665" />
-        <entry key="..\:/appdev/rush/app/src/main/res/layout/fragment_home.xml" value="0.2994791666666667" />
+        <entry key="..\:/appdev/rush/app/src/main/res/layout/fragment_home.xml" value="0.19555555555555557" />
+        <entry key="..\:/appdev/rush/app/src/main/res/layout/fragment_test.xml" value="0.2222222222222222" />
         <entry key="..\:/appdev/rush/app/src/main/res/menu/menu.xml" value="0.28489583333333335" />
       </map>
     </option>

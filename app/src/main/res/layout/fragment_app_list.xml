@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+
         android:padding="8dp"
 
 
@@ -41,13 +42,15 @@
             android:text="Firefox"
             android:textAppearance="?attr/textAppearanceListItem" />
 
-<!--        <androidx.appcompat.widget.AppCompatCheckedTextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="heyyyy"-->
-<!--            android:textColor="@color/white">-->
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-<!--        </androidx.appcompat.widget.AppCompatCheckedTextView>-->
+        </com.google.android.material.checkbox.MaterialCheckBox>
+
+
+
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

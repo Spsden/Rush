@@ -1,9 +1,11 @@
 package com.example.rush
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -49,6 +51,21 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        var settingButton = binding.switchLayout
+        settingButton.setOnClickListener {
+
+            val popUp = PopupMenu(context,settingButton)
+
+            popUp.menuInflater.inflate(R.menu.menu,popUp.menu)
+
+//            popUp.setOnMenuItemClickListener { myItem ->
+//                val item = myItem.itemId
+//            }
+
+            
+
+        }
 
 
 
@@ -102,6 +119,8 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
 
 
 
+
+
     override fun onCardClick(position: Int) {
         Toast.makeText(context, "Hey",Toast.LENGTH_SHORT).show()
 
@@ -113,6 +132,10 @@ class HomeFragment : Fragment(),RecyclerViewAdapter.OnItemClickListener {
 
 
     }
+
+
+
+
 
 
     companion object {
